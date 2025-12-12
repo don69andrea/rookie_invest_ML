@@ -200,3 +200,13 @@ def build_f2_features() -> None:
 
 if __name__ == "__main__":
     build_f2_features()
+
+from src.schema.core_features import CORE_FEATURES
+
+missing = set(CORE_FEATURES) - set(df.columns)
+extra = set(df.columns) - set(CORE_FEATURES)
+
+if missing:
+    raise ValueError(f"Missing core features: {missing}")
+
+df = df[CORE_FEATURES]
