@@ -32,3 +32,4 @@ data/f2/interim/
 data/f2/raw/
 data/f3/processed/f3_2019_2025_races_features.csv
 data/f3/processed/f3_features_advanced.csv
+.DS_Store
