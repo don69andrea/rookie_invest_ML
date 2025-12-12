@@ -15,3 +15,5 @@ __pycache__/
 logs/
 *.log
 EOF
+
+gedanken_S.python-version

@@ -135,6 +135,10 @@ def build_f3_season_features(
     # Sortierung für Lesbarkeit
     agg = agg.sort_values(["season", "driver_name"]).reset_index(drop=True)
 
+    # Harmonize column name for cross-series merge
+    if "season" in agg.columns and "year" not in agg.columns:
+        agg = agg.rename(columns={"season": "year"})
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
     agg.to_csv(output_path, index=False)
     print(f"✅ F3 season features written to: {output_path}")
