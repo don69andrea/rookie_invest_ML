@@ -23,3 +23,12 @@ notebooks/
 plots/
 gedanken_S
 .DS_Store
+
+src/f2/test.py
+
+.python-version
+.DS_Store
+data/f2/interim/
+data/f2/raw/
+data/f3/processed/f3_2019_2025_races_features.csv
+data/f3/processed/f3_features_advanced.csv
