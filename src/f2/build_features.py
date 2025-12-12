@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import re
 from pathlib import Path
-
+from src.schema.core_features import CORE_FEATURES
 
 INPUT_PATH = Path("data/f2/interim/f2_results_fia_drivers_clean.csv")
 OUTPUT_PATH = Path("data/f2/processed/f2_features.csv")
@@ -201,12 +201,18 @@ def build_f2_features() -> None:
 if __name__ == "__main__":
     build_f2_features()
 
-from src.schema.core_features import CORE_FEATURES
+    out_core = Path("data/f2/processed/f2_features.csv")
+    core_df = pd.read_csv(out_core, low_memory=False)
 
-missing = set(CORE_FEATURES) - set(df.columns)
-extra = set(df.columns) - set(CORE_FEATURES)
+    missing = set(CORE_FEATURES) - set(core_df.columns)
+    extra = set(core_df.columns) - set(CORE_FEATURES)
 
-if missing:
-    raise ValueError(f"Missing core features: {missing}")
+    if missing:
+        raise ValueError(f"F2 core schema missing columns: {sorted(missing)}")
 
-df = df[CORE_FEATURES]
+    if extra:
+        print(f"⚠️ F2 core schema extra columns (kept in file): {sorted(extra)}")
+
+    print("✅ F2 core schema OK")
+
+

@@ -1,8 +1,7 @@
 from __future__ import annotations
-
 from pathlib import Path
 import pandas as pd
-
+from src.schema.core_features import CORE_FEATURES
 
 INTERIM_DIR = Path("data/f1/interim")
 PROCESSED_DIR = Path("data/f1/processed")
@@ -238,14 +237,19 @@ def build_f1_season_features(
 
 
 if __name__ == "__main__":
-    build_f1_season_features()
+    out_features = build_f1_season_features()
+    out_core = PROCESSED_DIR / "f1_features_core.csv"
 
-from src.schema.core_features import CORE_FEATURES
+    core_df = pd.read_csv(out_core, low_memory=False)
 
-missing = set(CORE_FEATURES) - set(df.columns)
-extra = set(df.columns) - set(CORE_FEATURES)
+    missing = set(CORE_FEATURES) - set(core_df.columns)
+    extra = set(core_df.columns) - set(CORE_FEATURES)
 
-if missing:
-    raise ValueError(f"Missing core features: {missing}")
+    if missing:
+        raise ValueError(f"F1 core schema missing columns: {sorted(missing)}")
 
-df = df[CORE_FEATURES]
+    if extra:
+        print(f"⚠️ F1 core schema extra columns (kept in file): {sorted(extra)}")
+
+    print("✅ F1 core schema OK")
+

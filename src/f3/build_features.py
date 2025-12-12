@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import numpy as np
-
+from src.schema.core_features import CORE_FEATURES
 
 INTERIM_DIR = Path("data/f3/interim")
 PROCESSED_DIR = Path("data/f3/processed")
@@ -147,14 +147,20 @@ def build_f3_season_features(
 
 
 if __name__ == "__main__":
-    build_f3_season_features()
+    out_features = build_f3_season_features()
+    out_core = Path("data/f3/processed/f3_features.csv")
 
-from src.schema.core_features import CORE_FEATURES
+    core_df = pd.read_csv(out_core, low_memory=False)
 
-missing = set(CORE_FEATURES) - set(df.columns)
-extra = set(df.columns) - set(CORE_FEATURES)
+    missing = set(CORE_FEATURES) - set(core_df.columns)
+    extra = set(core_df.columns) - set(CORE_FEATURES)
 
-if missing:
-    raise ValueError(f"Missing core features: {missing}")
+    if missing:
+        raise ValueError(f"F3 core schema missing columns: {sorted(missing)}")
 
-df = df[CORE_FEATURES]
+    if extra:
+        print(f"⚠️ F3 core schema extra columns (kept in file): {sorted(extra)}")
+
+    print("✅ F3 core schema OK")
+
+
