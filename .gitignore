@@ -17,3 +17,9 @@ logs/
 EOF
 
 gedanken_S.python-version
+
+.python-version
+notebooks/
+plots/
+gedanken_S
+.DS_Store
