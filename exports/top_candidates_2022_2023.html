@@ -1,0 +1,216 @@
+
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Rookie Invest Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    h2 { margin-bottom: 8px; }
+    p { margin-top: 0; color: #444; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+    th { background: #111; color: white; position: sticky; top: 0; }
+    tr:hover { background: #f5f5f5; }
+    .prob { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h2>Rookie Invest Prototype Demo: Top Kandidaten 2022 bis 2023</h2>
+  <p>✅ markiert tatsächlichen F1 Einstieg (nur zur Validierung). Ranking basiert auf Modellwahrscheinlichkeit.</p>
+  <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>driver_name</th>
+      <th>driver_code</th>
+      <th>series</th>
+      <th>year</th>
+      <th>team_name</th>
+      <th>predicted_probability</th>
+      <th>hit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>O  Bearman</td>
+      <td>BEA</td>
+      <td>F3</td>
+      <td>2022</td>
+      <td>PREMA Racing</td>
+      <td>0.819</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>F  Drugovich</td>
+      <td>DRU</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>MP Motorsport</td>
+      <td>0.791</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>E  Fittipaldi</td>
+      <td>FIT</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>Charouz Racing System</td>
+      <td>0.731</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>G  Bortoleto</td>
+      <td>BOR</td>
+      <td>F3</td>
+      <td>2023</td>
+      <td>Trident</td>
+      <td>0.702</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>L  Zendeli</td>
+      <td>ZEN</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>Campos Racing</td>
+      <td>0.701</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>R  Stanek</td>
+      <td>STA</td>
+      <td>F3</td>
+      <td>2022</td>
+      <td>Trident</td>
+      <td>0.687</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>L  Sargeant</td>
+      <td>SAR</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>Carlin</td>
+      <td>0.664</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>J  Martí</td>
+      <td>MAR</td>
+      <td>F3</td>
+      <td>2023</td>
+      <td>Campos Racing</td>
+      <td>0.648</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>J  Hughes</td>
+      <td>HUG</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>Van Amersfoort Racing</td>
+      <td>0.645</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>T  Pourchaire</td>
+      <td>POU</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>ART Grand Prix</td>
+      <td>0.620</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>A  Iwasa</td>
+      <td>IWA</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>DAMS</td>
+      <td>0.615</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>F  Vesti</td>
+      <td>VES</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>ART Grand Prix</td>
+      <td>0.588</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>A  Leclerc</td>
+      <td>LEC</td>
+      <td>F3</td>
+      <td>2022</td>
+      <td>PREMA Racing</td>
+      <td>0.584</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>L  Lawson</td>
+      <td>LAW</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>Carlin</td>
+      <td>0.577</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>F  Vesti</td>
+      <td>VES</td>
+      <td>F2</td>
+      <td>2023</td>
+      <td>PREMA Racing</td>
+      <td>0.508</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Z  Maloney</td>
+      <td>MAL</td>
+      <td>F3</td>
+      <td>2022</td>
+      <td>Trident</td>
+      <td>0.502</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>J  Doohan</td>
+      <td>DOO</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>Virtuosi Racing</td>
+      <td>0.501</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>J  Doohan</td>
+      <td>DOO</td>
+      <td>F2</td>
+      <td>2023</td>
+      <td>Invicta Virtuosi Racing</td>
+      <td>0.498</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>D  Hauger</td>
+      <td>HAU</td>
+      <td>F2</td>
+      <td>2022</td>
+      <td>PREMA Racing</td>
+      <td>0.493</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>A  Iwasa</td>
+      <td>IWA</td>
+      <td>F2</td>
+      <td>2023</td>
+      <td>DAMS</td>
+      <td>0.491</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
