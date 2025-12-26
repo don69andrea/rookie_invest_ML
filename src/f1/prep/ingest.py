@@ -1,5 +1,6 @@
 from pathlib import Path
 import pandas as pd
+from src.common.features import require_columns
 
 
 # Standardpfade (relativ zum Projekt-Root)
@@ -71,6 +72,48 @@ def build_f1_race_driver_raw(
     constructors = tables["constructors"].copy()
     circuits = tables["circuits"].copy()
     status = tables["status"].copy()
+
+    require_columns(
+        races.columns,
+        {"raceId", "year", "round", "circuitId", "name", "date"},
+        "F1 races raw",
+    )
+    require_columns(
+        results.columns,
+        {
+            "resultId",
+            "raceId",
+            "driverId",
+            "constructorId",
+            "grid",
+            "positionOrder",
+            "points",
+            "laps",
+            "milliseconds",
+            "statusId",
+        },
+        "F1 results raw",
+    )
+    require_columns(
+        drivers.columns,
+        {"driverId", "forename", "surname", "nationality"},
+        "F1 drivers raw",
+    )
+    require_columns(
+        constructors.columns,
+        {"constructorId", "name", "nationality"},
+        "F1 constructors raw",
+    )
+    require_columns(
+        circuits.columns,
+        {"circuitId", "name", "location", "country"},
+        "F1 circuits raw",
+    )
+    require_columns(
+        status.columns,
+        {"statusId", "status"},
+        "F1 status raw",
+    )
 
     # --- Spalten umbenennen, damit beim Mergen nichts kollidiert ---
 

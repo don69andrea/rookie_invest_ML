@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import re
 from pathlib import Path
+from src.common.features import require_columns
 from src.schema.core_features import CORE_FEATURES
 
 INPUT_PATH = Path("data/f2/interim/f2_results_fia_drivers_clean.csv")
@@ -89,6 +90,21 @@ def mode_or_first(s: pd.Series):
 def build_f2_features() -> None:
     print(f"Lade Daten aus {INPUT_PATH} ...")
     df = pd.read_csv(INPUT_PATH)
+
+    required_cols = {
+        "season",
+        "race_id",
+        "session",
+        "laps",
+        "race_time",
+        "best_lap_time",
+        "gap",
+        "status",
+        "driver_name",
+        "driver_code",
+        "team_name",
+    }
+    require_columns(df.columns, required_cols, "F2 features")
 
     # Harmonize season/year early so groupby can use it
     if "year" not in df.columns and "season" in df.columns:
@@ -214,5 +230,3 @@ if __name__ == "__main__":
         print(f"⚠️ F2 core schema extra columns (kept in file): {sorted(extra)}")
 
     print("✅ F2 core schema OK")
-
-

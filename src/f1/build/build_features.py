@@ -1,6 +1,7 @@
 from __future__ import annotations
 from pathlib import Path
 import pandas as pd
+from src.common.features import require_columns
 from src.schema.core_features import CORE_FEATURES
 
 INTERIM_DIR = Path("data/f1/interim")
@@ -34,6 +35,20 @@ def build_f1_season_features(
     core_output_path.parent.mkdir(parents=True, exist_ok=True)
 
     df = load_f1_clean(input_path)
+
+    required_cols = {
+        "year",
+        "round",
+        "race_id",
+        "driver_id",
+        "constructor_id",
+        "grid_position",
+        "finishing_order",
+        "laps_completed",
+        "points",
+        "fastest_lap_speed",
+    }
+    require_columns(df.columns, required_cols, "F1 features")
 
     # --- Grundtypen setzen ---
     df["year"] = pd.to_numeric(df.get("year"), errors="coerce").astype("Int64")
@@ -252,4 +267,3 @@ if __name__ == "__main__":
         print(f"⚠️ F1 core schema extra columns (kept in file): {sorted(extra)}")
 
     print("✅ F1 core schema OK")
-

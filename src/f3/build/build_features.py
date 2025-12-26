@@ -1,6 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import numpy as np
+from src.common.features import require_columns
 from src.schema.core_features import CORE_FEATURES
 
 INTERIM_DIR = Path("data/f3/interim")
@@ -39,6 +40,20 @@ def build_f3_season_features(
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     df = load_f3_races_clean(input_path)
+
+    required_cols = {
+        "season",
+        "race_id",
+        "driver_name",
+        "driver_code",
+        "team_name",
+        "laps",
+        "kph",
+        "time_s",
+        "best_lap_s",
+        "gap_s",
+    }
+    require_columns(df.columns, required_cols, "F3 features")
 
     # --- Typen setzen ---
 
@@ -162,5 +177,3 @@ if __name__ == "__main__":
         print(f"⚠️ F3 core schema extra columns (kept in file): {sorted(extra)}")
 
     print("✅ F3 core schema OK")
-
-

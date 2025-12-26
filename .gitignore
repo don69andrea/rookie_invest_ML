@@ -1,34 +1,37 @@
-cat > .gitignore << 'EOF'
 # macOS
 .DS_Store
 
 # Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
 *.pyd
 
 # Virtual env
 .venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Tooling/cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
 
 # Logs
 logs/
 *.log
-EOF
 
-gedanken_S.python-version
-
+# Local project files
 .python-version
+
+# Project outputs (keep tracked files if already committed)
 plots/
-gedanken_S
-.DS_Store
-
-src/f2/test.py
-
-.python-version
-.DS_Store
-data/f2/interim/
-data/f2/raw/
-data/f3/processed/f3_2019_2025_races_features.csv
-data/f3/processed/f3_features_advanced.csv
-.DS_Store
+demo/artifacts/*.joblib
+data/**/raw/
+data/**/interim/

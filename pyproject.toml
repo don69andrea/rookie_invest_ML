@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rookie_invest_ml"
+version = "0.1.0"
+description = "Hybrides ML- und Knowledge-Base-Projekt fuer F1 Nachwuchstalente."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas",
+  "numpy",
+  "requests",
+  "matplotlib",
+  "scikit-learn",
+  "joblib",
+  "openpyxl",
+]

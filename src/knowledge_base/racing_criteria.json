@@ -1,0 +1,82 @@
+{
+  "series_rules": {
+    "f1": {
+      "requirements": {
+        "min_superlicense_points": 40,
+        "points_window_years": 3,
+        "min_age": 17,
+        "min_f1_test_km": 300,
+        "junior_series_experience_years": 2,
+        "junior_series_completion_rate": 0.8
+      },
+      "financials": {
+        "season_cost_min_chf": 15000000,
+        "season_cost_max_chf": 30000000
+      },
+      "market_value_boost": {
+        "high_value_nations": ["USA", "CHN"],
+        "negative_traits": ["vulgar", "disrespectful", "unrest"]
+      }
+    },
+    "f2": {
+      "requirements": {
+        "allowed_licenses": ["A", "B"],
+        "min_age": 16,
+        "max_years_in_f3": 2,
+        "ban_previous_champions": true
+      },
+      "financials": {
+        "season_cost_min_chf": 2000000,
+        "season_cost_max_chf": 3000000
+      }
+    },
+    "f3": {
+      "requirements": {
+        "min_age": 16,
+        "allowed_licenses": ["B"],
+        "preferred_pathway": ["FRECA", "GB3"],
+        "risky_pathway": ["F4"]
+      },
+      "financials": {
+        "season_cost_min_chf": 1200000,
+        "season_cost_max_chf": 1500000
+      }
+    }
+  },
+  "driver_profile": {
+    "biometrics": {
+      "ideal_weight_min_kg": 65,
+      "ideal_weight_max_kg": 75,
+      "min_weight_with_gear_kg": 80,
+      "ideal_height_min_m": 1.70,
+      "ideal_height_max_m": 1.75,
+      "neck_circumference_min_cm": 40,
+      "neck_circumference_max_cm": 45
+    },
+    "training_benchmarks": {
+      "physio_hours_week_min": 10,
+      "cognitive_training": "daily",
+      "sim_hours_pre_race": 16
+    },
+    "career": {
+      "peak_performance_age_start": 24,
+      "peak_performance_age_end": 32,
+      "required_start_capital_chf": 8000000
+    }
+  },
+  "team_profile": {
+    "political_power": {
+      "has_veto_right": ["Ferrari"],
+      "aggressive_fia_reporting": true
+    },
+    "infrastructure_metrics": [
+      "staff_count", "specialization_level", "pit_crew_performance",
+      "budget", "franchise_value", "simulator_quality"
+    ]
+  },
+  "vehicle_telemetry": {
+    "damage_flags": ["engine_damage", "tire_damage", "cooling_damage"],
+    "performance_specs": ["hp", "top_speed", "braking_power", "downforce_ground_effect"],
+    "dynamic_states": ["tire_temp", "tire_pressure", "rpm", "drs_active"]
+  }
+}

@@ -1,5 +1,6 @@
 from pathlib import Path
 import pandas as pd
+from src.common.features import require_columns
 
 
 INTERIM_DIR = Path("data/f1/interim")
@@ -30,6 +31,23 @@ def clean_f1_race_driver(
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     df = load_race_driver_raw(input_path)
+
+    require_columns(
+        df.columns,
+        {
+            "year",
+            "round",
+            "race_id",
+            "driver_id",
+            "grid_position",
+            "finishing_order",
+            "laps_completed",
+            "points",
+            "result_ms",
+            "status_text",
+        },
+        "F1 race-driver clean",
+    )
 
     # --- Typen setzen / konvertieren ---
 

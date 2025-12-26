@@ -9,7 +9,7 @@ import requests
 
 BASE_URL = "https://www.fiaformula2.com/Results?raceid={race_id}"
 MANUAL_META_PATH = Path("data/f2/raw/f2_dataset_manuell.xlsx")
-OUTPUT_PATH = Path("data/f2/processed/f2_results_fia.csv")
+OUTPUT_PATH = Path("data/f2/raw/f2_results_fia.csv")
 
 # Falls du weniger aggressiv scrapen willst, hier erhöhen
 REQUEST_SLEEP_SECONDS = 1.0

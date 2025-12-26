@@ -1,10 +1,11 @@
 import pandas as pd
 import re
 from pathlib import Path
+from src.common.features import require_columns
 
 # Pfade anpassen falls nötig
 INPUT = Path("data/f2/raw/f2_results_fia.csv")
-OUTPUT = Path("data/f2/processed/f2_results_fia_clean.csv")
+OUTPUT = Path("data/f2/interim/f2_results_fia_clean.csv")
 
 
 def parse_driver_info(cell):
@@ -68,6 +69,9 @@ def main():
             "LAP SET ON": "lap_set_on",
         }
     )
+
+    required_raw_cols = {"driver_info", "season", "round", "race_id"}
+    require_columns(df.columns, required_raw_cols, "F2 raw clean")
 
     # Fahrerinfo parsen
     parsed = df["driver_info"].apply(parse_driver_info)
