@@ -1,7 +1,7 @@
 # Reproducibility
 
 Ziel: einen klaren Ablauf, um Datenpipelines, Modellinputs und Demo-Outputs
-reproduzieren zu koennen.
+reproduzieren zu können.
 
 ## 1) Setup
 ```bash
@@ -59,8 +59,8 @@ Outputs (Training/Exports):
 - `demo/artifacts/drop_cols.txt`
 - `demo/input_by_year/` (CSV Dateien)
 
-## 5) Praesentation Demo
-Voraussetzung: genau eine CSV in `demo/input/` (manuell).
+## 5) Präsentation Demo
+Voraussetzung: genau eine CSV in `demo/input/` (manüll).
 ```bash
 python src/demo/run_demo.py
 ```
