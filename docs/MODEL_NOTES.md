@@ -7,7 +7,7 @@
 ## Trainingslogik
 - Zielvariable: `f1_entry` (Eintritt in F1 nach der betrachteten Saison)
 - Zeitbasierter Split: Training bis 2021, Test 2022-2023
-- Datenleckage: `first_f1_year` wird konseqünt aus Features entfernt
+- Datenleakage: `first_f1_year` wird konsequent aus Features entfernt
 
 ## Metriken
 - ROC AUC und PR AUC (robust bei Klassenimbalance)
@@ -15,6 +15,6 @@
 
 ## Limitationen
 - Starke Klassenimbalance (wenige positive Beispiele)
-- Datenqualität und Missing Valüs
+- Datenqualität und Missing Values
 - Knowledge-Base-Regeln sind heuristisch
 - Prototypischer Charakter, keine realen Investitionsentscheidungen

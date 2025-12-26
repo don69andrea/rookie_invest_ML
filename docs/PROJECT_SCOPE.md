@@ -3,12 +3,12 @@
 ## Ausgangslage
 Die Verbindung von Sport und Datenanalyse gewinnt an Bedeutung, da Entscheidungen
 über Leistung, Karriere und wirtschaftliches Potenzial zunehmend datenbasiert
-getroffen werden. Gleichzeitig entstehen neü Investitionsmodelle, bei denen in
+getroffen werden. Gleichzeitig entstehen neue Investitionsmodelle, bei denen in
 junge Talente investiert wird, um später am Erfolg zu partizipieren.
 
 ## Problemstellung
 Die Beurteilung des Potenzials von Nachwuchstalenten erfolgt heute häufig
-subjektiv und basiert auf individüllen Einschätzungen. Obwohl umfangreiche
+subjektiv und basiert auf individuellen Einschätzungen. Obwohl umfangreiche
 Leistungsdaten verfügbar sind, werden diese nur begrenzt systematisch genutzt.
 Wirtschaftliche und kontextbezogene Faktoren wie Vermarktungspotenzial oder
 Verletzungsrisiken bleiben oft unzureichend berücksichtigt.

@@ -12,7 +12,7 @@ später für Ranking, Prognosen oder Scouting genutzt werden können.
 ## Projektbeschreibung (Schulprojekt)
 Die Verbindung von Sport und Datenanalyse gewinnt an Bedeutung, da Entscheidungen
 über Leistung, Karriere und wirtschaftliches Potenzial zunehmend datenbasiert
-getroffen werden. Gleichzeitig entstehen neü Investitionsmodelle, bei denen in
+getroffen werden. Gleichzeitig entstehen neue Investitionsmodelle, bei denen in
 junge Talente investiert wird, um später am Erfolg zu partizipieren. Machine
 Learning in Kombination mit wissensbasierten Systemen ermöglicht es, das
 Potenzial von Athleten fundierter einzuschätzen und Sponsoring-Entscheidungen
@@ -26,7 +26,7 @@ langfristiges Engagement rechtfertigen.
 
 ### Problemstellung
 Die Beurteilung des Potenzials von Nachwuchstalenten erfolgt heute häufig
-subjektiv und basiert auf individüllen Einschätzungen. Obwohl umfangreiche
+subjektiv und basiert auf individuellen Einschätzungen. Obwohl umfangreiche
 Leistungsdaten verfügbar sind, werden sie nur begrenzt systematisch genutzt.
 Wirtschaftliche und kontextbezogene Faktoren wie Vermarktungspotenzial oder
 Verletzungsrisiken bleiben oft unzureichend berücksichtigt.
@@ -152,6 +152,6 @@ Die Referenz-Notebooks für die Dokumentation:
 - `docs/`: Dokumentation und Reproducibility
 
 ## Hinweise
-- Einige Configs in `configs/` sind aktüll leer und dienen als Platzhalter.
+- Einige Configs in `configs/` sind aktuell leer und dienen als Platzhalter.
 - Die Skripte erwarten bestimmte Spaltennamen; siehe Module unter
   `src/f1/prep`, `src/f2/prep`, `src/f3/build`.

@@ -60,7 +60,7 @@ Outputs (Training/Exports):
 - `demo/input_by_year/` (CSV Dateien)
 
 ## 5) Präsentation Demo
-Voraussetzung: genau eine CSV in `demo/input/` (manüll).
+Voraussetzung: genau eine CSV in `demo/input/` (manuell).
 ```bash
 python src/demo/run_demo.py
 ```
